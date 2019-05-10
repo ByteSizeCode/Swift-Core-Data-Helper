@@ -36,11 +36,68 @@ class SwiftCoreDataHelper {
         let genericItem = NSManagedObject(entity: entity, insertInto: managedContext)
         genericItem.setValue(name, forKeyPath: appropriateKeyPathName)
         
-        do {
+        do { //Save context and add to array
             try managedContext.save()
             entityArray.append(genericItem)
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    //Updating stored data
+    func updateData(forEntity: String, updateValueTo updatedValue: String, andSaveToArray entityArray: inout [NSManagedObject]){
+        
+        //Get managedContext, refrence to AppDelegate, and prepare fetchRequest
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "\(forEntity)")
+       
+        do {
+            let test = try managedContext.fetch(fetchRequest)
+            let objectUpdate = test.last! as! NSManagedObject
+            
+            //Update value
+            objectUpdate.setValue(updatedValue, forKey: "name")
+            
+            do { //Save context
+                try managedContext.save()
+            }
+            catch {
+                print(error)
+            }
+        }
+        catch {
+            print(error)
+        }
+    }
+    
+    //Delete saved data
+    func deleteData(forEntity: String){
+        
+        //Get managedContext, refrence to AppDelegate, and prepare fetchRequest
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "\(forEntity)")
+        
+        do {
+            let test = try managedContext.fetch(fetchRequest)
+            
+            //Delete object
+            let objectToDelete = test.last! as! NSManagedObject
+            managedContext.delete(objectToDelete)
+            
+            do { //Save context
+                try managedContext.save()
+            }
+            catch
+            {
+                print(error)
+            }
+            
+        }
+        catch
+        {
+            print(error)
         }
     }
 }

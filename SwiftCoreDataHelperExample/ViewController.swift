@@ -33,16 +33,40 @@ class ViewController: UIViewController {
         
         
         //Display data (for demonstration purposes only)
-        textView.text = "" //clear textfield
-        myData.getData(forEntity: "Car", andSaveToArray: &cars)
-        textView.text.append("Data from Car entity:\n")
-        for element in cars {
-             textView.text.append("\(element)\n\n\n")
-        }
-        myData.getData(forEntity: "Person", andSaveToArray: &people)
+        showObjectsStored_PersonEntity()
+        showObjectsStored_CarEntity()
+        
+        //Appending this for clarity
+        textView.text.append("\n\nChanged:\n")
+        
+        //Update data
+        let otherName = "Tom"
+        myData.updateData(forEntity: "Person", updateValueTo: otherName, andSaveToArray: &people)
+        
+        //Display change
+        showObjectsStored_PersonEntity()
+        
+        //Appending this for clarity
+        textView.text.append("\n\nDeleted:\n")
+        
+        //Delete data
+        myData.deleteData(forEntity: "Person")
+        
+        //Display change
+        showObjectsStored_PersonEntity()
+    }
+}
+
+
+//Helper methods
+extension ViewController {
+    func showObjectsStored_PersonEntity() {
         textView.text.append("\n\nData from Person entity:\n")
-        for element in people {
-             textView.text.append("\(element)\n\n\n")
-        }
+        textView.text.append("\(people.last!)\n\n\n")
+    }
+    
+    func showObjectsStored_CarEntity() {
+        textView.text.append("Data from Car entity:\n")
+        textView.text.append("\(cars.last!)\n\n\n")
     }
 }

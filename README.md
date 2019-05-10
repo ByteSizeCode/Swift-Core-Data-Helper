@@ -23,3 +23,13 @@ At a later time, fetch saved data as follows (e.g. a good time to do this may be
 ```swift
 myData.getData(forEntity: "Person", andSaveToArray: &people)
 ```
+Update data as follows
+```swift
+let otherName = "Tom"
+myData.updateData(forEntity: "Person", updateValueTo: otherName, andSaveToArray: &people)
+```
+
+Remove data as follows
+```swift
+myData.deleteData(forEntity: "Person")
+```
