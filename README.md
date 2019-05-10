@@ -1,6 +1,6 @@
 # Swift Core Data Helper
 
-Significantly cuts down on Boilerplate Code for CoreData implementation.
+Significantly cuts down on Boilerplate Code for Core Data implementation.
 
 ## Usage:
 
