@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
-        // The persistent container for the application. This implementation
+        // The persistent container for the application
         
         let container = NSPersistentContainer(name: "SwiftCoreDataHelper")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
