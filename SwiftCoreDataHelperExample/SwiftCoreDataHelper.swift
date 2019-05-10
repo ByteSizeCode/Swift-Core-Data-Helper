@@ -53,8 +53,9 @@ class SwiftCoreDataHelper {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "\(forEntity)")
        
         do {
-            let test = try managedContext.fetch(fetchRequest)
-            let objectUpdate = test.last! as! NSManagedObject
+            let fetched = try managedContext.fetch(fetchRequest)
+            let objectUpdate = fetched.last! as! NSManagedObject
+            
             
             //Update value
             objectUpdate.setValue(updatedValue, forKey: "name")
@@ -80,11 +81,13 @@ class SwiftCoreDataHelper {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "\(forEntity)")
         
         do {
-            let test = try managedContext.fetch(fetchRequest)
+            let fetched = try managedContext.fetch(fetchRequest)
             
             //Delete object
-            let objectToDelete = test.last! as! NSManagedObject
-            managedContext.delete(objectToDelete)
+            let objectToDelete = fetched as! [NSManagedObject]
+            if (objectToDelete.count != 0){ //Do not delete if nothing to delete
+                managedContext.delete(objectToDelete.last!)
+            }
             
             do { //Save context
                 try managedContext.save()
