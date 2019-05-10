@@ -42,7 +42,7 @@
 		6A921D5F228517C6004731D1 = {
 			isa = PBXGroup;
 			children = (
-				6A921D6A228517C6004731D1 /* SwiftCoreDataHelper */,
+				6A921D6A228517C6004731D1 /* SwiftCoreDataHelperExample */,
 				6A921D69228517C6004731D1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,7 +55,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6A921D6A228517C6004731D1 /* SwiftCoreDataHelper */ = {
+		6A921D6A228517C6004731D1 /* SwiftCoreDataHelperExample */ = {
 			isa = PBXGroup;
 			children = (
 				6A921D6B228517C6004731D1 /* AppDelegate.swift */,
@@ -67,7 +67,7 @@
 				6A74EC23228530E900EA4053 /* SwiftCoreDataHelper.xcdatamodeld */,
 				6A921D77228517C6004731D1 /* Info.plist */,
 			);
-			path = SwiftCoreDataHelper;
+			path = SwiftCoreDataHelperExample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,7 +105,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6A921D63228517C6004731D1 /* Build configuration list for PBXProject "SwiftCoreDataHelper" */;
+			buildConfigurationList = 6A921D63228517C6004731D1 /* Build configuration list for PBXProject "SwiftCoreDataHelperExample" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -291,7 +291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftCoreDataHelper/Info.plist;
+				INFOPLIST_FILE = SwiftCoreDataHelperExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +308,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SwiftCoreDataHelper/Info.plist;
+				INFOPLIST_FILE = SwiftCoreDataHelperExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,7 +323,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6A921D63228517C6004731D1 /* Build configuration list for PBXProject "SwiftCoreDataHelper" */ = {
+		6A921D63228517C6004731D1 /* Build configuration list for PBXProject "SwiftCoreDataHelperExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6A921D78228517C6004731D1 /* Debug */,
