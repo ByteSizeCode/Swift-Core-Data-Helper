@@ -31,7 +31,6 @@ class ViewController: UIViewController {
         let personName = "Harry"
         myData.save(name: personName, useEntity: "Person", useArray: &people, usingKeypathName: "name")
         
-        
         //Display data (for demonstration purposes only)
         showObjectsStored_PersonEntity()
         showObjectsStored_CarEntity()
@@ -56,7 +55,6 @@ class ViewController: UIViewController {
         showObjectsStored_PersonEntity()
     }
 }
-
 
 //Helper methods
 extension ViewController {
