@@ -56,7 +56,6 @@ class SwiftCoreDataHelper {
             let fetched = try managedContext.fetch(fetchRequest)
             let objectUpdate = fetched.last! as! NSManagedObject
             
-            
             //Update value
             objectUpdate.setValue(updatedValue, forKey: "name")
             
@@ -92,14 +91,11 @@ class SwiftCoreDataHelper {
             do { //Save context
                 try managedContext.save()
             }
-            catch
-            {
+            catch {
                 print(error)
             }
-            
         }
-        catch
-        {
+        catch {
             print(error)
         }
     }
