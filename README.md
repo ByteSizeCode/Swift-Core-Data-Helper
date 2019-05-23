@@ -17,7 +17,7 @@ var people: [NSManagedObject] = []
 Write data to an entity you previously created in your xcdatamodeld file as follows
 ```swift
 let personName = "Harry"
-myData.save(name: personName, useEntity: "Person", useArray: &people, usingKeypathName: "name")
+myData.insert(name: personName, useEntity: "Person", useArray: &people, usingKeypathName: "name")
 ```
 At a later time, fetch data saved in an entity as follows (e.g. a good time to do this may be on app launch in ViewDidLoad)
 ```swift

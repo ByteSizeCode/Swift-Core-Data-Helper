@@ -25,11 +25,11 @@ class ViewController: UIViewController {
         
         //Write to CoreData
         let seatColor = "The Seats Are Blue"
-        myData.save(name: seatColor, useEntity: "Car", useArray: &cars, usingKeypathName: "seatColor")
+        myData.insert(name: seatColor, useEntity: "Car", useArray: &cars, usingKeypathName: "seatColor")
         
         //Write to CoreData
         let personName = "Harry"
-        myData.save(name: personName, useEntity: "Person", useArray: &people, usingKeypathName: "name")
+        myData.insert(name: personName, useEntity: "Person", useArray: &people, usingKeypathName: "name")
         
         //Display data (for demonstration purposes only)
         showObjectsStored_PersonEntity()

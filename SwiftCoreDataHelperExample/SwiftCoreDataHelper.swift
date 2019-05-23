@@ -28,7 +28,7 @@ class SwiftCoreDataHelper {
     }
     
     //Save data
-    func save(name: String, useEntity nameOfEntity: String, useArray entityArray: inout [NSManagedObject], usingKeypathName appropriateKeyPathName: String) {
+    func insert(name: String, useEntity nameOfEntity: String, useArray entityArray: inout [NSManagedObject], usingKeypathName appropriateKeyPathName: String) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
