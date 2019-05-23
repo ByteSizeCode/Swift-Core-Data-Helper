@@ -10,26 +10,26 @@ Create a refrence to the SwiftCoreDataHelper class
 ```swift
 let myData = SwiftCoreDataHelper()
 ````
-Create an array to store Entity objects
+Create an array to keep track of your Entity objects
 ```swift
 var people: [NSManagedObject] = []
 ```
-Write data as follows
+Write data to an entity you previously created in your xcdatamodeld file as follows
 ```swift
 let personName = "Harry"
 myData.save(name: personName, useEntity: "Person", useArray: &people, usingKeypathName: "name")
 ```
-At a later time, fetch saved data as follows (e.g. a good time to do this may be on app launch in ViewDidLoad)
+At a later time, fetch data saved in an entity as follows (e.g. a good time to do this may be on app launch in ViewDidLoad)
 ```swift
 myData.getData(forEntity: "Person", andSaveToArray: &people)
 ```
-Update data as follows
+Update data in an entity as follows
 ```swift
 let otherName = "Tom"
 myData.updateData(forEntity: "Person", updateValueTo: otherName, andSaveToArray: &people)
 ```
 
-Remove data as follows
+Remove an entity entirely as follows
 ```swift
 myData.deleteData(forEntity: "Person")
 ```
