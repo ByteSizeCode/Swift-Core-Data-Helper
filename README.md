@@ -6,7 +6,7 @@ Significantly cuts down on boilerplate code for Core Data implementation.
 
 After including the SwiftCoreDataHelper class in your project:
 
-Create an object
+Create a refrence to the SwiftCoreDataHelper class
 ```swift
 let myData = SwiftCoreDataHelper()
 ````
